@@ -1,34 +1,24 @@
-import java.util.*;
-class E1
-{
-     public static void main(String[] args) {
+ class E1 {
+    static void assignment(int cpal) throws IllegalArgumentException
+    {
+        if(cpal<5)
         {
-            Scanner sc=new Scanner(System.in);
-            try{
-                try{
-            int a=sc.nextInt();
-            int b=sc.nextInt();
-            System.out.println(a/b);
-                }
-            
-            catch(InputMismatchException e)
-            {
-                System.out.println("This is input mismatch exception");
-            }
+            throw new IllegalArgumentException("Assignment marks will not be 5");
         }
-            catch(ArithmeticException ae)
-            {
-                System.out.println("This is Arithmetuic exception");
-            }
-           /* catch(Exception e)
-            {
-                System.out.println("Exception occurred give the corect one");
-            }*/
-            System.out.println("Java"); 
-            finally{
-                System.out.println("MNJU");
-            }
+        else{
+            System.out.println("Full marks will be given");
         }
-        
     }
+    public static void main(String[] args)
+
+    {
+        try{
+          assignment(4);
+        }
+        catch(IllegalArgumentException e)
+        {
+            System.out.println(e);
+        }
+    }
+    
 }
